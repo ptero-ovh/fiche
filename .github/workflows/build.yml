@@ -5,10 +5,13 @@ on:
       - master
 jobs:
   push:
-    name: "yolks:apps_${{ matrix.app }}"
+    name: Fiche building...
     runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v4
-      
       - run: make
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fiche
+          path: fiche
