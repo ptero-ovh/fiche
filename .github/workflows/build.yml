@@ -1,0 +1,14 @@
+name: Build Fiche
+on:
+  push:
+    branches:
+      - master
+jobs:
+  push:
+    name: "yolks:apps_${{ matrix.app }}"
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - run: make
